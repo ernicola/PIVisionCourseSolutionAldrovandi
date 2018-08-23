@@ -1,0 +1,19 @@
+.aldrovandi-parent{
+	background-color: config.Backgroundcolor; 
+	border-radius: 5px; 
+	color: white;
+}
+.math-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.math-table td, .math-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.math-table tr:first-child td{
+    background-color: #dddddd;
+	color: #000000
+}

@@ -1,0 +1,59 @@
+<link rel="stylesheet" type="text/css" href="Scripts/app/editor/symbols/ext/sym-math-aldrovandi-style.css">
+<div class="aldrovandi-parent">
+	<div class="check-element animate-show-hide" ng-show='config.Values'>
+	<h3>Table of Value for {{Label}}</h3>
+		<table class="math-table">
+			<tr>
+				<td>Timestamp</td>
+				<td>Value</td>
+			</tr>
+			<tr ng-repeat='item in dataItems'>
+				<td>{{item.Time}}</td>
+				<td>{{item.Value}}</td>
+			</tr>
+		</table> 
+	</div>
+	&nbsp;
+	&nbsp;
+	<h3>Table of Function for {{Label}}</h3>
+		<table class="math-table">
+		  <tr>
+			<td>Function</td>
+			<td>Result</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Count'>
+			<td>Number Of Values</td>
+			<td>{{CountValue}}</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Max'>
+			<td>Max value</td>
+			<td>{{MaxValue | number:config.Displaydigits}}</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Min'>
+			<td>Min value</td>
+			<td>{{MinValue | number:config.Displaydigits}}</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Sum'>
+			<td>Sum</td>
+			<td>{{SumValue| number:config.Displaydigits}}</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Sin'>
+			<td>Sin(LastValue)</td>
+			<td>{{SinValue| number:config.Displaydigits}}</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Cos'>
+			<td>Cos(LastValue)</td>
+			<td>{{CosValue| number:config.Displaydigits}}</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Sqrt'>
+			<td>Sqrt(LastValue)</td>
+			<td>{{SqrtValue| number:config.Displaydigits}}</td>
+		  </tr>
+		  <tr class="check-element animate-show-hide" ng-show='config.Custom'>
+			<td>Custom Function ({{config.Customstring}})</td>
+			<td>{{CustomValue}}</td>
+		  </tr>
+		</table> 
+	</div>
+</div>
+			
