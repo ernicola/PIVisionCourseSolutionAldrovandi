@@ -1,9 +1,7 @@
 (function (PV) {
 	"use strict";
-
 	function symbolVis() { };
 	PV.deriveVisualizationFromBase(symbolVis);
-	
 	var definition = { 
 		typeName: "math-aldrovandi",
 		visObjectType: symbolVis,
@@ -58,8 +56,9 @@
 		};
 		function dataHandle(){
 			for(var i=0;i<scope.dataItems.length;i++){
-                scope.dataItems[i].Value = parseFloat(scope.dataItems[i].Value);
-				scope.values.push(parseFloat(scope.dataItems[i].Value));
+                //scope.dataItems[i].Value = parseFloat(scope.dataItems[i].Value.replace(",","."));
+				scope.dataItems[i].Value = parseFloat(scope.dataItems[i].Value);
+				scope.values.push(scope.dataItems[i].Value);
             }
 		}
 		function execMathFunctions(){
