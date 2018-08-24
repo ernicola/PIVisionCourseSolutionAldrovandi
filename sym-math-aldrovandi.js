@@ -46,16 +46,19 @@
 			var firstAttribute = data.Data[0];
 			scope.dataItems = firstAttribute.Values;
 			scope.values = [];
+			//Convert Data to float (regional settings problem)
 			dataHandle();
 			if(firstAttribute.Label)
 			{
 				scope.Units = firstAttribute.Units;
 				scope.Label = firstAttribute.Label;
 			}
+			//Calc all functions
 			execMathFunctions();
 		};
 		function dataHandle(){
 			for(var i=0;i<scope.dataItems.length;i++){
+				// ITA or ENG???
                 //scope.dataItems[i].Value = parseFloat(scope.dataItems[i].Value.replace(",","."));
 				scope.dataItems[i].Value = parseFloat(scope.dataItems[i].Value);
 				scope.values.push(scope.dataItems[i].Value);
@@ -70,10 +73,11 @@
 			scope.SqrtValue = Math.sqrt(scope.LastValue);
 			scope.SinValue = Math.sin(scope.LastValue);
 			scope.CosValue = Math.cos(scope.LastValue);
+			//Create a custom function
 			var customFunString = "return ".concat(scope.config.Customstring,";");
 			var customFun = Function("LastValue", customFunString);
 			scope.CustomValue = customFun(scope.LastValue);
-			console.log(scope.CustomValue);
+			//console.log(scope.CustomValue);
 		}
 	};
 	PV.symbolCatalog.register(definition); 
