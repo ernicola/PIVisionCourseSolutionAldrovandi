@@ -1,8 +1,3 @@
-.aldrovandi-parent{
-	background-color: config.Backgroundcolor; 
-	border-radius: 5px; 
-	color: white;
-}
 .math-table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
